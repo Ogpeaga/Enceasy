@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk-alpine
+FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
@@ -7,8 +7,10 @@ COPY mvnw .
 COPY pom.xml .
 COPY src ./src
 
-COPY target/*.jar app.jar
+RUN chmod +x mvnw
+
+RUN ./mvnw clean package -DskipTests
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "target/Enceasy-0.0.1-SNAPSHOT.jar"]
