@@ -105,7 +105,7 @@ public class EnceasyService {
     public ResponseDTO toResponse(Enceasy enceasy){
         return new ResponseDTO(
                 enceasy.getUrlOriginal(),
-                "www.enceasy.com" + "/" + enceasy.getUrlEncurtada(),
+                "https://enceasy.com" + "/" + enceasy.getUrlEncurtada(),
                 enceasy.getData());
     }
     // REDIRECIONAR
