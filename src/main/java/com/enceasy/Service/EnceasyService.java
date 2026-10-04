@@ -47,7 +47,6 @@ public class EnceasyService {
         int maxAttemps = 6;
         int attemps = 0;
 
-        // AQUI MONITORA AS TENTATIVAS //
         do {
             code = generatedUrlRandomUnique(codeLength);
             attemps++;
@@ -60,7 +59,6 @@ public class EnceasyService {
         return code;
     }
 
-    // AQUI GERA O CÓDIGO //
 
     private String generatedUrlRandomUnique(int length){
         StringBuilder sb = new StringBuilder(length);
